@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <!-- this is my index.html page you could make a github.io page with this. Idc that much...HOST THE GOD-DANG FILE...!-->
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="https://entraptas-secret-project.nekoweb.org/IMG_0321.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://entraptas-secret-project.nekoweb.org/IMG_0321.ico">
     <title>Clever | Portal</title>
     <style>
         body {
-            font-family:Chalkduster;
+            font-family: Chalkduster;
             background: url('https://entraptas-secret-project.nekoweb.org/IMG_0282.gif');
             min-height: 27px;
             margin: 0;
             padding: 0;
             display: flex;
-            color:blueviolet;
+            color: blueviolet;
         }
-           .main-content {
+
+        .main-content {
             margin-left: 100px;
             flex: 1;
             padding: 20px;
@@ -25,7 +27,7 @@
             color: blueviolet;
             text-align: center;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .letter-section {
@@ -47,8 +49,8 @@
             font-weight: bold;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 3px solid rgba(255,255,255,0.3);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .buttons-container {
@@ -59,7 +61,7 @@
         }
 
         .empty-message {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             font-style: italic;
             text-align: center;
             padding: 20px;
@@ -83,13 +85,13 @@
 
         input[type="button"]:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             background: magenta;
         }
 
         input[type="button"]:active {
             transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         @media (max-width: 768px) {
@@ -97,151 +99,153 @@
                 width: 60px;
                 padding: 15px 5px;
             }
+
             .sidebar-btn {
                 padding: 8px;
                 font-size: 16px;
             }
-            .main-content {
-               
-            }
+
+            .main-content {}
         }
     </style>
 </head>
+
 <body>
- <div class="main-content">
-        <h1>The Tool Launcher <a href = "https://rawcdn.githack.com/entraptadoeztech/The_Unity_Proxy_Project/refs/heads/main/v.1.1.html">version 1.1</a></h1>
+    <div class="main-content">
+        <h1>The Tool Launcher <a href="https://rawcdn.githack.com/entraptadoeztech/The_Unity_Proxy_Project/refs/heads/main/v.1.1.html">version 1.1</a></h1>
         <h2>here are my tools I recommend you to use</h2>
-    <marquee behavior="scroll" direction="left" scrollamount="30">This is a modified version of the UGS game launcher!</marquee>
-     <div id="sections-container">  
+        <marquee behavior="scroll" direction="left" scrollamount="30">This is a modified version of the UGS game launcher!</marquee>
+        <div id="sections-container">
         </div>
     </div>
-     <script>
-         
-let files = [
-"clGUST-launcher.html",
-"clcode-editor.html",
-"clsafehaven",
-"cl1v1lol",
-"clNautilusOS",
-"clbro",
-];
-  const allChars = [
-    "C",
-    "G",
-    "S",
-    "1",
-    "N",
-    "B",
-  ];
+    <script>
+        let files = [
+            "clGUST-launcher.html",
+            "clcode-editor.html",
+            "clsafehaven",
+            "cl1v1lol",
+            "clNautilusOS",
+            "clbro",
+        ];
+        const allChars = [
+            "C",
+            "G",
+            "S",
+            "1",
+            "N",
+            "B",
+        ];
 
-   const filesByChar = {};
-  allChars.forEach((char) => {
-    filesByChar[char] = [];
-  });
-function generateAllSections() {
-  try {
-    document.getElementById("lolbutton").remove();
-  } catch (e) {}
-  
- files.forEach((file) => {
-    const lower = file.toLowerCase();
-    if (lower.startsWith("cl")) {
-      const aftercl = lower.substring(2);
-      if (aftercl.length > 0) {
-        const firstChar = aftercl[0].toUpperCase();
-        if (filesByChar[firstChar]) {
-          filesByChar[firstChar].push(file);
-        }
-      }
-    }
-  });
+        const filesByChar = {};
+        allChars.forEach((char) => {
+            filesByChar[char] = [];
+        });
 
-  const container = document.getElementById("sections-container");
-  allChars.forEach((char) => {
-    const section = document.createElement("div");
-    section.className = "letter-section";
-    section.id = `section-${char}`;
+        function generateAllSections() {
+            try {
+                document.getElementById("lolbutton").remove();
+            } catch (e) {}
 
-    const header = document.createElement("div");
-    header.className = "letter-header";
-    header.textContent = char;
-    section.appendChild(header);
-
-    const buttonsContainer = document.createElement("div");
-    buttonsContainer.className = "buttons-container";
-
-    if (filesByChar[char].length > 0) {
-      filesByChar[char].forEach((file) => {
-        const btn = document.createElement("input");
-        btn.type = "button";
-        btn.value = file;
-        btn.onclick = () => {
-          function normalizeFileName(name) {
-            if (name.includes(".") && name.lastIndexOf(".") > 0) return name;
-            return name + ".html";
-          }
-
-          const normalized = normalizeFileName(file);
-          const encoded = encodeURIComponent(normalized);
-
-          fetch(
-            `https://cdn.jsdelivr.net/gh/entraptadoeztech/The_Unity_Proxy_Project@refs/heads/main/${encoded}?t=${Date.now()}`,
-          )
-            .then((response) => response.text())
-            .then((text) => {
-              const newWin = window.open("about:blank", "_blank");
-              if (newWin) {
-                newWin.document.open();
-                newWin.document.write(text);
-                newWin.document.close();
-              }
+            files.forEach((file) => {
+                const lower = file.toLowerCase();
+                if (lower.startsWith("cl")) {
+                    const aftercl = lower.substring(2);
+                    if (aftercl.length > 0) {
+                        const firstChar = aftercl[0].toUpperCase();
+                        if (filesByChar[firstChar]) {
+                            filesByChar[firstChar].push(file);
+                        }
+                    }
+                }
             });
-        };
-        btn.style.width = "100%";
-        btn.style.height = "100%";
-        buttonsContainer.appendChild(btn);
-      });
-    } else {
-      section.classList.add("empty");
-      const emptyMsg = document.createElement("div");
-      emptyMsg.className = "empty-message";
-      emptyMsg.textContent = "No files";
-      buttonsContainer.appendChild(emptyMsg);
-    }
 
-    section.appendChild(buttonsContainer);
-    container.appendChild(section);
-  });
+            const container = document.getElementById("sections-container");
+            allChars.forEach((char) => {
+                const section = document.createElement("div");
+                section.className = "letter-section";
+                section.id = `section-${char}`;
 
-  generateSidebar(allChars, filesByChar);
-}
+                const header = document.createElement("div");
+                header.className = "letter-header";
+                header.textContent = char;
+                section.appendChild(header);
 
-function generateSidebar(allChars, filesByChar) {
-  const sidebar = document.getElementById("sidebar");
+                const buttonsContainer = document.createElement("div");
+                buttonsContainer.className = "buttons-container";
 
-  allChars.forEach((char) => {
-    const btn = document.createElement("button");
-    btn.className = "sidebar-btn";
-    btn.textContent = char;
+                if (filesByChar[char].length > 0) {
+                    filesByChar[char].forEach((file) => {
+                        const btn = document.createElement("input");
+                        btn.type = "button";
+                        btn.value = file;
+                        btn.onclick = () => {
+                            function normalizeFileName(name) {
+                                if (name.includes(".") && name.lastIndexOf(".") > 0) return name;
+                                return name + ".html";
+                            }
 
-    if (filesByChar[char].length === 0) {
-      btn.classList.add("empty");
-    } else {
-      btn.onclick = () => {
-        const section = document.getElementById(`section-${char}`);
-        if (section) {
-          section.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+                            const normalized = normalizeFileName(file);
+                            const encoded = encodeURIComponent(normalized);
+
+                            fetch(
+                                    `https://cdn.jsdelivr.net/gh/entraptadoeztech/The_Unity_Proxy_Project@refs/heads/main/${encoded}?t=${Date.now()}`,
+                                )
+                                .then((response) => response.text())
+                                .then((text) => {
+                                    const newWin = window.open("about:blank", "_blank");
+                                    if (newWin) {
+                                        newWin.document.open();
+                                        newWin.document.write(text);
+                                        newWin.document.close();
+                                    }
+                                });
+                        };
+                        btn.style.width = "100%";
+                        btn.style.height = "100%";
+                        buttonsContainer.appendChild(btn);
+                    });
+                } else {
+                    section.classList.add("empty");
+                    const emptyMsg = document.createElement("div");
+                    emptyMsg.className = "empty-message";
+                    emptyMsg.textContent = "No files";
+                    buttonsContainer.appendChild(emptyMsg);
+                }
+
+                section.appendChild(buttonsContainer);
+                container.appendChild(section);
+            });
+
+            generateSidebar(allChars, filesByChar);
         }
-      };
-    }
 
-    sidebar.appendChild(btn);
-  });
-}
-generateAllSections();
-     </script>
+        function generateSidebar(allChars, filesByChar) {
+            const sidebar = document.getElementById("sidebar");
+
+            allChars.forEach((char) => {
+                const btn = document.createElement("button");
+                btn.className = "sidebar-btn";
+                btn.textContent = char;
+
+                if (filesByChar[char].length === 0) {
+                    btn.classList.add("empty");
+                } else {
+                    btn.onclick = () => {
+                        const section = document.getElementById(`section-${char}`);
+                        if (section) {
+                            section.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                            });
+                        }
+                    };
+                }
+
+                sidebar.appendChild(btn);
+            });
+        }
+        generateAllSections();
+    </script>
 </body>
-   </html>
+
+</html>
